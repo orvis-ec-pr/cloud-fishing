@@ -11,7 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<CloudFishingContext>(options =>
     options.UseSqlServer(
-        builder.Configuration.GetConnectionString("ecomm-dev-rainbow"),
+        builder.Configuration.GetConnectionString("defaultConnection"),
         options => options.EnableRetryOnFailure()
     ));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
