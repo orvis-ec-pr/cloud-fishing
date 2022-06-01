@@ -2,18 +2,20 @@
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
 WORKDIR /app
 
+ENV DOTNET_CLI_TELEMETRY_OPTOUT 1
+
 # Copy csproj and restore as distinct layers
 COPY *.csproj ./
 RUN dotnet restore
 
 # Copy everything else and build
-COPY ../engine/examples ./
+COPY . ./
 RUN dotnet publish -c Release -o out
 
 # Build runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /app
 COPY --from=build-env /app/out .
-ENTRYPOINT ["dotnet", "aspnetapp.dll"]
+ENTRYPOINT ["dotnet", "cloud-fishing.dll"]
 EXPOSE 8080
 EXPOSE 8081
