@@ -16,6 +16,6 @@ RUN dotnet publish -c Release -o out
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
 WORKDIR /app
 COPY --from=build-env /app/out .
-ENTRYPOINT ["dotnet", "cloud-fishing.dll"]
+ENTRYPOINT ["dotnet", "cloud-fishing.dll", "--server.urls", "http://+:8080;https://+:8081"]
 EXPOSE 8080
 EXPOSE 8081
