@@ -10,11 +10,14 @@ RUN dotnet restore
 
 # Copy everything else and build
 COPY . ./
-RUN dotnet publish -c Release -o out
+RUN dotnet publish -c Debug -o out
 
 # Build runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:6.0
+# RUN apt-get update; \
+# 	apt-get install -y --no-install-recommends \
+# 		curl
 WORKDIR /app
 COPY --from=build-env /app/out .
-ENTRYPOINT ["dotnet", "cloud-fishing.dll", "--server.urls", "http://+:8080"]
-EXPOSE 8080
+ENTRYPOINT ["dotnet", "cloud-fishing.dll", "--environment", "Production"]
+EXPOSE 80
