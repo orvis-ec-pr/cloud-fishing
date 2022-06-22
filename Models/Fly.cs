@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace cloud_fishing.Models;
+namespace CloudFishing.Models;
 
 public class Fly
 {

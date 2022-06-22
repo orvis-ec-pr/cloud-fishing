@@ -1,4 +1,4 @@
-namespace cloud_fishing.Models;
+namespace CloudFishing.Models;
 using Microsoft.EntityFrameworkCore;
 
 public class Weather

@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
-using cloud_fishing.Models;
-using cloud_fishing.Data;
+using CloudFishing.Models;
+using CloudFishing.Data;
 
-namespace cloud_fishing.Controllers;
+namespace CloudFishing.Controllers;
 
 [ApiController]
 [Route("[controller]")]

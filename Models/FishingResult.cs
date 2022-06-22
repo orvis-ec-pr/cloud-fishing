@@ -1,4 +1,4 @@
-namespace cloud_fishing.Models;
+namespace CloudFishing.Models;
 public class FishingResult
 {
     public Boolean Success { get; set; }

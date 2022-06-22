@@ -1,7 +1,7 @@
-using cloud_fishing.Models;
+using CloudFishing.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace cloud_fishing.Data
+namespace CloudFishing.Data
 {
     public class CloudFishingContext : DbContext 
     {

@@ -1,8 +1,8 @@
-using cloud_fishing.Models;
+using CloudFishing.Models;
 using System;
 using System.Linq;
 
-namespace cloud_fishing.Data
+namespace CloudFishing.Data
 {
 
     public static class DbInitializer
